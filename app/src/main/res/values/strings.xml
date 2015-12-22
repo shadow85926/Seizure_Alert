@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Seizure Alert!</string>
+    <string name="welcome">Welcome New User!</string>
+    <string name="Phone_Number_Heading">Enter Parent Phone Number:</string>
+    <string name="childs_Name">Child\'s Name:</string>
+    <string name="welcome_Text_Home_Screen">Welcome!</string>
+    <string name="first_Screen_Enter_Button">Enter</string>
+    <string name="title_seizureAlert" />
+    <string name="filter_title_viewseizureAlert" />
 </resources>

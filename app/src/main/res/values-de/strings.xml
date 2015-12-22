@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Seizure Alert!</string>
+    <string name="welcome">Welkommen Neue Benutzer </string>
+    <string name="Phone_Number_Heading">Geben Eltern Telefonnummer:</string>
+    <string name="childs_Name">Kinders Name:</string>
+    <string name="welcome_Text_Home_Screen">Welkommen!</string>
+</resources>
