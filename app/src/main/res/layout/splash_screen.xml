@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Welcome to Seizure Alert"
-                android:textSize="35sp"
+                android:textSize="30sp"
                 android:textColor="@color/colorAccent"
                 android:gravity="center"/>
 

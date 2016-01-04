@@ -7,4 +7,5 @@
     <string name="first_Screen_Enter_Button">Enter</string>
     <string name="title_seizureAlert" />
     <string name="filter_title_viewseizureAlert" />
+    <string name="settings_Heaer">Settings</string>
 </resources>

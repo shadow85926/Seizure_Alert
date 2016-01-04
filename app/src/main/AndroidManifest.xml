@@ -14,12 +14,13 @@
         <activity
             android:name="com.shadowappdev.seizurealert.MainActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden"></activity>
 
-        </activity>
         <activity android:name=".HomeScreen"></activity>
-        <activity android:name=".SplashScreen">
 
+        <activity android:name=".SplashScreen"></activity>
+
+        <activity android:name=".Check">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

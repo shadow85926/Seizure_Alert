@@ -1,21 +1,21 @@
 package com.shadowappdev.seizurealert;
 
 
-import android.content.Intent;
+import android.content.*;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Vibrator;
-import android.content.Context;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.view.View.OnClickListener;
-
 import android.widget.Toast;
 
-public class HomeScreen extends AppCompatActivity implements OnClickListener {
+
+public class HomeScreen extends AppCompatActivity  implements OnClickListener  {
     private Vibrator mVibrator;
-    String phone_No;
-    String message;
+    private String sp_Phone_Number;
+    private String sp_Name;
 
 
     @Override
@@ -24,29 +24,36 @@ public class HomeScreen extends AppCompatActivity implements OnClickListener {
         setContentView(R.layout.home_screen);
 
 
-
+        View settings = findViewById(R.id.settings_dots);
+        settings.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, Settings.class);
+                startActivity(intent);
+                mVibrator.vibrate(125);
+            }
+        });
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         View enterVib1 = this.findViewById(R.id.test_text_Button);
         enterVib1.setOnClickListener(this);
     }
 
-    protected void setVariables() {
-            Intent intent = getIntent();
-            phone_No = intent.getStringExtra("phone_Number");
-            message = intent.getStringExtra("Name");
-            message = message + " may be having a Seizure, *this was sent by Seizure Alert*";
-
-
-
+    protected void setSharedPreferencesInfo(){
+        SharedPreferences prfs = getSharedPreferences("phone_and_name", Context.MODE_PRIVATE);
+         sp_Phone_Number = prfs.getString("phone_Number", "");
+         sp_Name = prfs.getString("Name", "");
+         sp_Name = sp_Name + " may be having a Seizure, *this was sent by Seizure Alert*";
     }
-    protected void sendSMSMessage(String phone_No, String message) {
+
+
+    protected void sendSMSMessage(String sp_Phone_Number,String sp_Name) {
 
 
 
         try {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(phone_No, null, message, null, null);
+            smsManager.sendTextMessage(sp_Phone_Number, null, sp_Name, null, null);
             Toast.makeText(getApplicationContext(), "SMS sent.",
                     Toast.LENGTH_LONG).show();
         } catch (Exception e) {
@@ -57,12 +64,14 @@ public class HomeScreen extends AppCompatActivity implements OnClickListener {
         }
     }
 
+
+
     @Override
     public void onClick(View v) {
-
         mVibrator.vibrate(125);
-        setVariables();
-        sendSMSMessage(phone_No,message);
+        setSharedPreferencesInfo();
+        sendSMSMessage(sp_Phone_Number, sp_Name);
+        //Toast.makeText(HomeScreen.this, sp_Phone_Number + " " + sp_Name , Toast.LENGTH_SHORT).show();
     }
 
 
