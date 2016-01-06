@@ -30,9 +30,10 @@ public class HomeScreen extends AppCompatActivity  implements OnClickListener  {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeScreen.this, Settings.class);
                 startActivity(intent);
-                mVibrator.vibrate(125);
+               mVibrator.vibrate(125);
             }
         });
+
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         View enterVib1 = this.findViewById(R.id.test_text_Button);

@@ -19,12 +19,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/settings_Heaer"
+
+                android:text="@string/settings_header"
                 android:textSize="30sp"
                 android:textColor="@color/colorAccent"
-                android:gravity="center_vertical"
-                android:paddingLeft="25dp"
+                android:gravity="center"
+                android:id="@+id/settings_header"
                 />
 
             <Space
@@ -32,8 +32,20 @@
                 android:layout_height="15dp" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/settings_button_info"
+                android:textSize="30sp"
+                android:textColor="@color/colorAccent"
+                android:gravity="center_vertical"
+               android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:id="@+id/settings_button_info"
+                android:background="@color/colorPrimaryDark"
+                />
+
+
+
 
 
         </LinearLayout>

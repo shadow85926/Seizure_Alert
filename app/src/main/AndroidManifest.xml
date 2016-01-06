@@ -19,6 +19,8 @@
         <activity android:name=".HomeScreen"></activity>
 
         <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".Settings_Info"></activity>
 
         <activity android:name=".Check">
             <intent-filter>

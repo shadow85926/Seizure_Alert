@@ -8,4 +8,8 @@
     <string name="title_seizureAlert" />
     <string name="filter_title_viewseizureAlert" />
     <string name="settings_Heaer">Settings</string>
+    <string name="settings_header">Settings</string>
+    <string name="settings_button_info">Information</string>
+    <string name="info_header">Information</string>
+    <string name="parent_phone_number_settings_info">Parent Phone Number</string>
 </resources>
