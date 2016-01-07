@@ -22,7 +22,7 @@ public class Settings extends AppCompatActivity{
        final Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         TextView textView = (TextView) findViewById(R.id.settings_header);
-        SpannableString content = new SpannableString("Content");
+        SpannableString content = new SpannableString("Settings");
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         textView.setText(content);
 
@@ -33,6 +33,7 @@ public class Settings extends AppCompatActivity{
                 mVibrator.vibrate(125);
                 Intent intent = new Intent(Settings.this, Settings_Info.class);
                 startActivity(intent);
+                finish();
             }
         });
 

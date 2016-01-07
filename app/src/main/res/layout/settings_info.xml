@@ -79,6 +79,6 @@
         android:text="Save Changes"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorAccent"
-        android:id="@+id/button" />
+        android:id="@+id/save_changes_info_button" />
 
 </LinearLayout>

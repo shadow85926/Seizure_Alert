@@ -1,19 +1,24 @@
 package com.shadowappdev.seizurealert;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Settings_Info extends AppCompatActivity{
-     String sp_Phone_Number;
-     String sp_Name;
-     TextView ph_Number;
-     TextView Name;
-
+public class Settings_Info extends AppCompatActivity implements OnClickListener {
+    public String sp_Phone_Number;
+    public String sp_Name;
+    public TextView ph_Number;
+    public TextView Name;
+    public View Save_Button;
+    public Vibrator mVibrator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +26,14 @@ public class Settings_Info extends AppCompatActivity{
         setContentView(R.layout.settings_info);
         getSharedPreferencesInfo();
         setEditTexts();
+        Save_Button = findViewById(R.id.save_changes_info_button);
+        Save_Button.setOnClickListener(this);
+        mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
     }
+
+
+
+
 
     protected void getSharedPreferencesInfo() {
         SharedPreferences prfs = getSharedPreferences("phone_and_name", Context.MODE_PRIVATE);
@@ -51,5 +63,16 @@ public class Settings_Info extends AppCompatActivity{
         sp_Name = Name.getText().toString();
     }
 
+
+        public void onClick(View v) {
+            mVibrator.vibrate(125);
+            setValuesFromEditTexts();
+            setSharedPreferencesInfo();
+            Intent intent = new Intent(Settings_Info.this, Settings.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(Settings_Info.this, "Saved!", Toast.LENGTH_SHORT).show();
+
+    }
 
 }

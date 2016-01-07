@@ -38,6 +38,8 @@ public class HomeScreen extends AppCompatActivity  implements OnClickListener  {
 
         View enterVib1 = this.findViewById(R.id.test_text_Button);
         enterVib1.setOnClickListener(this);
+        View reset_button = this.findViewById(R.id.reset_Check_Button);
+        reset_button.setOnClickListener(this);
     }
 
     protected void setSharedPreferencesInfo(){
@@ -69,10 +71,36 @@ public class HomeScreen extends AppCompatActivity  implements OnClickListener  {
 
     @Override
     public void onClick(View v) {
-        mVibrator.vibrate(125);
-        setSharedPreferencesInfo();
-        sendSMSMessage(sp_Phone_Number, sp_Name);
-        //Toast.makeText(HomeScreen.this, sp_Phone_Number + " " + sp_Name , Toast.LENGTH_SHORT).show();
+
+        switch (v.getId()) {
+
+            case R.id.test_text_Button:
+            mVibrator.vibrate(125);
+            setSharedPreferencesInfo();
+            sendSMSMessage(sp_Phone_Number, sp_Name);
+            //Toast.makeText(HomeScreen.this, sp_Phone_Number + " " + sp_Name , Toast.LENGTH_SHORT).show();
+            break;
+
+          case R.id.reset_Check_Button:
+                SharedPreferences preferences = getSharedPreferences("phone_and_name", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("phone_Number"," ");
+                editor.putString("Name","");
+                editor.apply();
+
+                SharedPreferences prfs = getSharedPreferences("SPLASH_SCREEN", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor1 = prfs.edit();
+                editor1.putBoolean("Splash_Screen_Displayed", false);
+                editor1.apply();
+
+                SharedPreferences prfs1 = getSharedPreferences("MAIN_SCREEN", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor2 = prfs1.edit();
+                editor2.putBoolean("Main_Shown", false);
+                editor2.apply();
+
+                Toast.makeText(HomeScreen.this, "ALL SCREENS RESET!", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 
 
