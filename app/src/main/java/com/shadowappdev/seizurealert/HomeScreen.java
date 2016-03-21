@@ -3,6 +3,7 @@ package com.shadowappdev.seizurealert;
 
 import android.content.*;
 import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Vibrator;
@@ -12,10 +13,11 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 
-public class HomeScreen extends AppCompatActivity  implements OnClickListener  {
+public class HomeScreen extends AppCompatActivity  implements OnClickListener {
     private Vibrator mVibrator;
     private String sp_Phone_Number;
     private String sp_Name;
+
 
 
     @Override
@@ -50,6 +52,7 @@ public class HomeScreen extends AppCompatActivity  implements OnClickListener  {
     }
 
 
+
     protected void sendSMSMessage(String sp_Phone_Number,String sp_Name) {
 
 
@@ -67,6 +70,10 @@ public class HomeScreen extends AppCompatActivity  implements OnClickListener  {
         }
     }
 
+    protected void Start_HR(){
+
+
+    }
 
 
     @Override
@@ -75,6 +82,7 @@ public class HomeScreen extends AppCompatActivity  implements OnClickListener  {
         switch (v.getId()) {
 
             case R.id.test_text_Button:
+                Start_HR();
             mVibrator.vibrate(125);
             setSharedPreferencesInfo();
             sendSMSMessage(sp_Phone_Number, sp_Name);
