@@ -22,10 +22,10 @@
         android:layout_height="50dp"
         android:text="@string/welcome_Text_Home_Screen"
         android:textColor="@color/colorAccent"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:gravity="center"
         android:paddingRight="15dp"
-        android:paddingLeft="47dp"
+        android:paddingLeft="71dp"
         android:clickable="false"
         android:layout_weight="1.00" />
 
@@ -38,16 +38,27 @@
     </LinearLayout>
 
     <Space
-        android:layout_width="wrap_content"
-        android:layout_height="10dp" />
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:src="@drawable/graph_placeholder"
-        android:layout_weight="0.13" />
-<Space
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="---"
+        android:id="@+id/textView_HR"
+        android:gravity="center"
+        android:textSize="150sp"
+        android:textColor="@color/colorAccent" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bpm"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"/>
+
+    <Space
     android:layout_width="match_parent"
     android:layout_height="50dp" />
     <Button

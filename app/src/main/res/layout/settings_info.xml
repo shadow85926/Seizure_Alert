@@ -14,22 +14,21 @@
         android:weightSum="1">
 
         <Button
-            android:layout_width="50dp"
+            android:layout_width="44dp"
             android:layout_height="50dp"
     android:background="@drawable/arrow2"
-            android:id="@+id/button2"
-            android:layout_weight="2.10" />
+            android:id="@+id/back_button_settings_info_header" />
 
         <TextView
-        android:layout_width="326dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
         android:text="@string/info_header"
         android:textSize="30sp"
         android:layout_gravity="right"
             android:paddingRight="50dp"
         android:textColor="@color/colorAccent"
         android:gravity="center"
-        android:id="@+id/settings_header"
+        android:id="@+id/settings_info_header"
         />
 
     </LinearLayout>

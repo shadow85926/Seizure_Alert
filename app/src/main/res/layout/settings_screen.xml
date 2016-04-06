@@ -16,16 +16,31 @@
             android:padding="4dp"
             >
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-                android:text="@string/settings_header"
-                android:textSize="30sp"
-                android:textColor="@color/colorAccent"
-                android:gravity="center"
-                android:id="@+id/settings_header"
-                />
+                <Button
+                    android:layout_width="44dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/arrow2"
+                    android:id="@+id/back_button_settings_header" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:text="@string/settings_header"
+                    android:textSize="30sp"
+                    android:layout_gravity="right"
+                    android:paddingRight="50dp"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    android:id="@+id/settings_header"
+                    />
+
+            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"

@@ -12,13 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Settings_Info extends AppCompatActivity implements OnClickListener {
+public class Settings_Info extends AppCompatActivity implements View.OnClickListener {
     public String sp_Phone_Number;
     public String sp_Name;
     public TextView ph_Number;
     public TextView Name;
     public View Save_Button;
     public Vibrator mVibrator;
+    public View Back_Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class Settings_Info extends AppCompatActivity implements OnClickListener 
         Save_Button = findViewById(R.id.save_changes_info_button);
         Save_Button.setOnClickListener(this);
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        Back_Button = findViewById(R.id.back_button_settings_info_header);
+        Back_Button.setOnClickListener(this);
     }
 
 
@@ -65,13 +68,25 @@ public class Settings_Info extends AppCompatActivity implements OnClickListener 
 
 
         public void onClick(View v) {
-            mVibrator.vibrate(125);
-            setValuesFromEditTexts();
-            setSharedPreferencesInfo();
-            Intent intent = new Intent(Settings_Info.this, Settings.class);
-            startActivity(intent);
-            finish();
-            Toast.makeText(Settings_Info.this, "Saved!", Toast.LENGTH_SHORT).show();
+
+            switch(v.getId()) {
+                case R.id.save_changes_info_button:
+                mVibrator.vibrate(125);
+                setValuesFromEditTexts();
+                setSharedPreferencesInfo();
+                Intent intent = new Intent(Settings_Info.this, Settings.class);
+                startActivity(intent);
+                finish();
+                Toast.makeText(Settings_Info.this, "Saved!", Toast.LENGTH_SHORT).show();
+                break;
+
+                case R.id.back_button_settings_info_header:
+                    mVibrator.vibrate(125);
+                    Intent intent2 = new Intent(Settings_Info.this, Settings.class);
+                    startActivity(intent2);
+                    finish();
+                    break;
+            }
 
     }
 
