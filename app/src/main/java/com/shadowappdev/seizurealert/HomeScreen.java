@@ -35,7 +35,7 @@ public class HomeScreen extends AppCompatActivity  implements OnClickListener {
     private Vibrator mVibrator;
     private String sp_Phone_Number;
     private String sp_Name;
-    private BluetoothManager bm = (BluetoothManager)getSystemService(Context.BLUETOOTH_SERVICE)
+    private BluetoothManager bm = (BluetoothManager)getSystemService(Context.BLUETOOTH_SERVICE);
     private BluetoothAdapter mBluetoothAdapter = bm.getAdapter();
     private Set<BluetoothDevice> pairedDevices;
     int apiVersion = android.os.Build.VERSION.SDK_INT;
@@ -86,19 +86,6 @@ public class HomeScreen extends AppCompatActivity  implements OnClickListener {
         }
     }
 
-
-    protected  void BLEScan(){
-        BluetoothLeScanner scanner = mBluetoothAdapter.getBluetoothLeScanner();
-        // scan for devices
-        scanner.startScan(new ScanCallback() {
-            @Override
-            public void onScanResult(int callbackType, ScanResult result) {
-                // get the discovered device as you wish
-                // this will trigger each time a new device is found
-
-                BluetoothDevice device = result.getDevice();
-            }
-        });
 
 
 
