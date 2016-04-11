@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Seizure Alert!</string>
     <string name="welcome">Welcome New User!</string>
-    <string name="Phone_Number_Heading">Enter Parent Phone Number:</string>
-    <string name="childs_Name">Child\'s Name:</string>
+    <string name="Phone_Number_Heading">Enter Caregiver\'s Phone Number:</string>
+    <string name="childs_Name">Patients\'s Name:</string>
     <string name="welcome_Text_Home_Screen">Welcome!</string>
     <string name="first_Screen_Enter_Button">Enter</string>
     <string name="title_seizureAlert" />
@@ -11,5 +11,5 @@
     <string name="settings_header">Settings</string>
     <string name="settings_button_info">Information</string>
     <string name="info_header">Information</string>
-    <string name="parent_phone_number_settings_info">Parent Phone Number</string>
+    <string name="parent_phone_number_settings_info">Caregiver\'s Phone Number</string>
 </resources>
